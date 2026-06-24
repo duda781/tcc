@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:radial-gradient(circle,#111 0%,#000 80%);
+    height:100vh;
+    font-family:'Montserrat',sans-serif;
+    color:white;
+}
+
+/* ==========================================
+ESTRELAS
+========================================== */
+
+.estrelas{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:radial-gradient(white 1px,transparent 1px);
+    background-size:50px 50px;
+    opacity:.3;
+}
+
+/* ==========================================
+LOGO
+========================================== */
+
+.logo{
+    position:absolute;
+    top:30px;
+    width:100%;
+    text-align:center;
+    letter-spacing:6px;
+    z-index:100;
+}
+
+.logo span{
+    display:block;
+    margin-top:10px;
+    color:orange;
+    font-size:14px;
+}
+
+/* ==========================================
+MENU LATERAL
+========================================== */
+
+.menu-container{
+    position:fixed;
+    left:30px;
+    top:55%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column-reverse;
+    gap:15px;
+    z-index:200;
+    max-height:85vh;
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    position:relative;
+    transition:
+    transform .4s ease,
+    opacity .4s ease;
+    cursor:pointer;
+}
+
+.menu:hover{
+    transform:translateX(10px);
+}
+
+.menu.ativo{
+    transform:translateX(20px);
+}
+
+.indicador{
+    width:18px;
+    height:18px;
+    border:2px solid #fff;
+    border-radius:50%;
+    margin-right:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.menu.ativo .indicador{
+    background:rgba(255,255,255,.1);
+
+    box-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px rgba(255,255,255,.5);
+}
+
+.menu.ativo .indicador::after{
+    content:'';
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+}
+
+.miniatura{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin-right:25px;
+    flex-shrink:0;
+
+    transition:
+    transform .5s ease,
+    box-shadow .5s ease;
+
+    box-shadow:
+    inset -10px -10px 15px rgba(0,0,0,.9);
+}
+
+.menu.ativo .miniatura{
+    transform:scale(1.2);
+
+    box-shadow:
+    inset -10px -10px 15px rgba(0,0,0,.9),
+    0 0 20px rgba(255,255,255,.6);
+}
+
+.mercurio-miniatura{ background:linear-gradient(135deg,#8a6d63,#2d221e); }
+.venus-miniatura{ background:linear-gradient(135deg,#705b4b,#201a15); }
+.terra-miniatura{ background:linear-gradient(135deg,#3a526b,#0f1924); }
+.marte-miniatura{ background:linear-gradient(135deg,#b83b1d,#360f05); }
+.jupiter-miniatura{ background:linear-gradient(135deg,#443c35,#14110f); }
+.saturno-miniatura{ background:linear-gradient(135deg,#9d8b72,#322b22); }
+.urano-miniatura{ background:linear-gradient(135deg,#627c85,#1c272b); }
+.netuno-miniatura{ background:linear-gradient(135deg,#2b4775,#0a1324); }
+.plutao-miniatura{ background:linear-gradient(135deg,#6e5e54,#211b18); }
+
+.planeta-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.planeta-nome{
+    font-size:1.05rem;
+    font-weight:400;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#fff;
+    display:flex;
+    align-items:center;
+}
+
+.menu.ativo .planeta-nome{
+    color:#ffae42;
+}
+
+.menu.ativo .planeta-nome::before{
+    content:'';
+    display:inline-block;
+    width:35px;
+    height:8px;
+    background:#ff7a1a;
+    margin-right:12px;
+}
+
+.planeta-distancia{
+    font-size:.70rem;
+    color:#555;
+    letter-spacing:1.5px;
+    margin-top:4px;
+    text-transform:uppercase;
+}
+
+.menu.ativo .planeta-distancia{
+    color:#ff7a1a;
+}
+
+/* ==========================================
+SISTEMA SOLAR
+========================================== */
+
+:root{
+    --escala:.65;
+}
+
+.sistema-solar{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* ==========================================
+SOL
+========================================== */
+
+.sol{
+    position:absolute;
+
+    width:calc(140px * var(--escala));
+    height:calc(140px * var(--escala));
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:10;
+
+    background:
+    radial-gradient(circle at 35% 35%,
+    #fff7c2 0%,
+    #ffd54a 18%,
+    #ff9d00 45%,
+    #ff5e00 70%,
+    #b32400 100%);
+
+    box-shadow:
+    0 0 40px rgba(255,180,0,.7),
+    0 0 80px rgba(255,120,0,.6),
+    0 0 140px rgba(255,80,0,.45),
+    0 0 220px rgba(255,120,0,.25);
+
+    animation:pulsarSol 5s ease-in-out infinite;
+}
+
+.sol::before{
+    content:'';
+    position:absolute;
+    inset:-20%;
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.3),
+    rgba(255,180,0,.08),
+    transparent 75%);
+
+    filter:blur(8px);
+}
+
+.sol::after{
+    content:'';
+    position:absolute;
+    inset:-45%;
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,180,0,.25),
+    rgba(255,120,0,.12),
+    transparent 75%);
+
+    animation:auraSolar 8s linear infinite;
+}
+
+/* ==========================================
+ÓRBITAS
+========================================== */
+
+.orbita{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:calc(var(--tamanho) * var(--escala));
+    height:calc(var(--tamanho) * var(--escala));
+
+    border:1px dashed rgba(255,255,255,.15);
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.orbita:hover{
+    border-color:rgba(255,255,255,.35);
+}
+
+/* tamanhos */
+
+.orbita1{ --tamanho:240px; }
+.orbita2{ --tamanho:340px; }
+.orbita3{ --tamanho:460px; }
+.orbita4{ --tamanho:580px; }
+.orbita5{ --tamanho:720px; }
+.orbita6{ --tamanho:860px; }
+.orbita7{ --tamanho:1000px; }
+.orbita8{ --tamanho:1140px; }
+.orbita9{ --tamanho:1280px; }
+
+/* ==========================================
+PLANETAS
+========================================== */
+
+.planeta{
+    position:absolute;
+    top:50%;
+    left:100%;
+
+    width:auto;
+    height:auto;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transform:translate(-50%,-50%);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    filter .4s ease;
+}
+
+.planeta:hover{
+    transform:
+    translate(-50%,-50%)
+    scale(1.2);
+
+    filter:brightness(1.3);
+    z-index:999;
+}
+
+.planeta::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    rgba(255,255,255,.95) 0%,
+    rgba(255,255,255,.3) 12%,
+    transparent 28%);
+}
+
+.planeta::after{
+    content:'';
+    position:absolute;
+    inset:-25%;
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.18),
+        transparent 70%
+    );
+
+    opacity:0;
+    transition:opacity .4s ease;
+}
+
+.planeta-ativo::after{
+    opacity:1;
+}
+
+.planeta-ativo{
+    filter:brightness(1.4);
+
+    z-index:999;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.5),
+    0 0 40px rgba(255,255,255,.6),
+    0 0 80px rgba(255,255,255,.5),
+    0 0 120px rgba(255,255,255,.4);
+
+    animation:
+    pulsarPlaneta 2s ease-in-out infinite,
+    girarPlaneta 12s linear infinite;
+}
+
+/* ==========================================
+PLANETAS INDIVIDUAIS
+========================================== */
+
+.mercurio{
+    width:14px;
+    height:14px;
+    background:radial-gradient(circle at 30% 30%,#999,#333 70%,#111);
+    box-shadow:
+    inset -5px -5px 8px rgba(0,0,0,.8),
+    0 0 10px rgba(255,255,255,.2);
+}
+
+.venus{
+    width:20px;
+    height:20px;
+    background:radial-gradient(circle at 30% 30%,#ffd27a,#cc7a00 70%,#3b1d00);
+}
+
+.terra{
+    width:22px;
+    height:22px;
+    background:radial-gradient(circle at 30% 30%,#7be0ff,#007acc 65%,#001b33);
+}
+
+.marte{
+    width:18px;
+    height:18px;
+    background:radial-gradient(circle at 30% 30%,#ff8a5c,#b32400 70%,#2b0800);
+}
+
+.jupiter{
+    width:34px;
+    height:34px;
+    background:radial-gradient(circle at 30% 30%,#ffe0b0,#b07f35 65%,#2a1705);
+}
+
+.saturno{
+    width:30px;
+    height:30px;
+    background:radial-gradient(circle at 30% 30%,#f1e3c8,#9d8b72 65%,#2b2117);
+}
+
+.saturno::after{
+    content:'';
+    position:absolute;
+
+    width:170%;
+    height:40%;
+
+    border-radius:50%;
+    border:3px solid rgba(220,200,170,.7);
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.urano{
+    width:26px;
+    height:26px;
+    background:radial-gradient(circle at 30% 30%,#d7f5ff,#627c85 65%,#182328);
+}
+
+.netuno{
+    width:24px;
+    height:24px;
+    background:radial-gradient(circle at 30% 30%,#8cb8ff,#2b4775 65%,#09111f);
+}
+
+.plutao{
+    width:12px;
+    height:12px;
+    background:radial-gradient(circle at 30% 30%,#c1b0a6,#6e5e54 65%,#1a1411);
+}
+
+/* ==========================================
+ANIMAÇÕES
+========================================== */
+
+@keyframes girarPlaneta{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+@keyframes pulsarPlaneta{
+
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+}
+
+@keyframes pulsarSol{
+
+    0%{
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(-50%,-50%)
+        scale(1.04);
+    }
+
+    100%{
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+}
+
+@keyframes auraSolar{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ==========================================
+ÓRBITAS COM VELOCIDADE REALISTA
+========================================== */
+
+.orbita1{
+    --tamanho:240px;
+    animation:orbitaMercurio 8s linear infinite;
+}
+
+.orbita2{
+    --tamanho:340px;
+    animation:orbitaVenus 15s linear infinite;
+}
+
+.orbita3{
+    --tamanho:460px;
+    animation:orbitaTerra 22s linear infinite;
+}
+
+.orbita4{
+    --tamanho:580px;
+    animation:orbitaMarte 40s linear infinite;
+}
+
+.orbita5{
+    --tamanho:720px;
+    animation:orbitaJupiter 90s linear infinite;
+}
+
+.orbita6{
+    --tamanho:860px;
+    animation:orbitaSaturno 140s linear infinite;
+}
+
+.orbita7{
+    --tamanho:1000px;
+    animation:orbitaUrano 220s linear infinite;
+}
+
+.orbita8{
+    --tamanho:1140px;
+    animation:orbitaNetuno 320s linear infinite;
+}
+
+.orbita9{
+    --tamanho:1280px;
+    animation:orbitaPlutao 420s linear infinite;
+}
+
+/* ==========================================
+ANIMAÇÕES DAS ÓRBITAS
+SEM O 360°
+========================================== */
+
+@keyframes orbitaMercurio{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaVenus{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaTerra{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaMarte{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaJupiter{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaSaturno{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaUrano{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaNetuno{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+@keyframes orbitaPlutao{
+    from{
+        transform:translate(-50%,-50%) rotate(0turn);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(1turn);
+    }
+}
+
+/* ==========================================
+REMOVE ROTAÇÃO DOS PLANETAS
+========================================== */
+
+.planeta{
+    animation:none;
+}
+
+.planeta-ativo{
+    animation:pulsarPlaneta 2s ease-in-out infinite;
+}
