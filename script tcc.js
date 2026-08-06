@@ -152,26 +152,22 @@ menus.forEach((menu, index) => {
 // ROTAÇÃO DO SISTEMA SOLAR
 // ==========================================
 
-const solar =
-    document.querySelector(
+const solar =document.querySelector(
         ".sistema-solar"
     );
+        
+    import { mercurio } from './mercurio.js';
+    import { venus } from './venus.js';
+    import { terra } from './terra.js';
+    import { marte } from './marte.js';
+    import { jupiter } from './jupiter.js';
+    import { saturno } from './saturno.js';
+    import { urano } from './urano.js';
+    import { netuno } from './netuno.js';
+    import { plutao } from './plutao.js';
+    
 
-let rotation = 0;
-
-function rotateSolarSystem() {
-
-    rotation += 0.02;
-
-    // rotação 3D suave
-    solar.style.transform =
-        `rotateY(${rotation}deg)`;
-
-    requestAnimationFrame(
-        rotateSolarSystem
-    );
-
-}
-
-// inicia animação
-rotateSolarSystem();
+    
+    const planetas = [mercurio, venus, terra, marte, jupiter, saturno, urano, netuno, plutao];
+    
+    console.log(planetas);

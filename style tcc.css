@@ -408,7 +408,17 @@ PLANETAS INDIVIDUAIS
 .terra{
     width:22px;
     height:22px;
-    background:radial-gradient(circle at 30% 30%,#7be0ff,#007acc 65%,#001b33);
+    border-radius:50%;
+    background:
+        radial-gradient(circle at 35% 30%, #ffffff55 0 8%, transparent 10%),
+        radial-gradient(circle at 65% 40%, #3ea84d 0 12%, transparent 14%),
+        radial-gradient(circle at 40% 70%, #2e8b57 0 10%, transparent 12%),
+        radial-gradient(circle at 75% 65%, #7fbf4d 0 8%, transparent 10%),
+        radial-gradient(circle at 30% 30%, #7be0ff, #1b82d2 55%, #003b73 90%);
+    box-shadow:
+        inset -3px -3px 5px rgba(0,0,0,.45),
+        inset 2px 2px 4px rgba(255,255,255,.25),
+        0 0 6px rgba(100,180,255,.5);
 }
 
 .marte{
