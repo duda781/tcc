@@ -14,6 +14,7 @@ body{
     color:white;
 }
 
+
 /* ==========================================
 ESTRELAS
 ========================================== */
@@ -26,6 +27,7 @@ ESTRELAS
     background-size:50px 50px;
     opacity:.3;
 }
+
 
 /* ==========================================
 LOGO
@@ -46,6 +48,7 @@ LOGO
     color:orange;
     font-size:14px;
 }
+
 
 /* ==========================================
 MENU LATERAL
@@ -133,15 +136,41 @@ MENU LATERAL
     0 0 20px rgba(255,255,255,.6);
 }
 
-.mercurio-miniatura{ background:linear-gradient(135deg,#8a6d63,#2d221e); }
-.venus-miniatura{ background:linear-gradient(135deg,#705b4b,#201a15); }
-.terra-miniatura{ background:linear-gradient(135deg,#3a526b,#0f1924); }
-.marte-miniatura{ background:linear-gradient(135deg,#b83b1d,#360f05); }
-.jupiter-miniatura{ background:linear-gradient(135deg,#443c35,#14110f); }
-.saturno-miniatura{ background:linear-gradient(135deg,#9d8b72,#322b22); }
-.urano-miniatura{ background:linear-gradient(135deg,#627c85,#1c272b); }
-.netuno-miniatura{ background:linear-gradient(135deg,#2b4775,#0a1324); }
-.plutao-miniatura{ background:linear-gradient(135deg,#6e5e54,#211b18); }
+.mercurio-miniatura{
+    background:linear-gradient(135deg,#8a6d63,#2d221e);
+}
+
+.venus-miniatura{
+    background:linear-gradient(135deg,#705b4b,#201a15);
+}
+
+.terra-miniatura{
+    background:linear-gradient(135deg,#3a526b,#0f1924);
+}
+
+.marte-miniatura{
+    background:linear-gradient(135deg,#b83b1d,#360f05);
+}
+
+.jupiter-miniatura{
+    background:linear-gradient(135deg,#443c35,#14110f);
+}
+
+.saturno-miniatura{
+    background:linear-gradient(135deg,#9d8b72,#322b22);
+}
+
+.urano-miniatura{
+    background:linear-gradient(135deg,#627c85,#1c272b);
+}
+
+.netuno-miniatura{
+    background:linear-gradient(135deg,#2b4775,#0a1324);
+}
+
+.plutao-miniatura{
+    background:linear-gradient(135deg,#6e5e54,#211b18);
+}
 
 .planeta-info{
     display:flex;
@@ -247,6 +276,7 @@ SISTEMA SOLAR
     overflow:hidden;
 }
 
+
 /* ==========================================
 SOL
 ========================================== */
@@ -313,6 +343,7 @@ SOL
     animation:auraSolar 8s linear infinite;
 }
 
+
 /* ==========================================
 ÓRBITAS
 ========================================== */
@@ -340,6 +371,7 @@ SOL
     border-color:rgba(255,255,255,.35);
 }
 
+
 /* tamanhos */
 
 .orbita1{ --tamanho:240px; }
@@ -351,6 +383,7 @@ SOL
 .orbita7{ --tamanho:1000px; }
 .orbita8{ --tamanho:1140px; }
 .orbita9{ --tamanho:1280px; }
+
 
 /* ==========================================
 PLANETAS
@@ -431,9 +464,9 @@ PLANETAS
     0 0 120px rgba(255,255,255,.4);
 
     animation:
-    pulsarPlaneta 2s ease-in-out infinite,
-    girarPlaneta 12s linear infinite;
+    pulsarPlaneta 2s ease-in-out infinite;
 }
+
 
 /* ==========================================
 PLANETAS INDIVIDUAIS
@@ -443,6 +476,7 @@ PLANETAS INDIVIDUAIS
     width:14px;
     height:14px;
     background:radial-gradient(circle at 30% 30%,#999,#333 70%,#111);
+
     box-shadow:
     inset -5px -5px 8px rgba(0,0,0,.8),
     0 0 10px rgba(255,255,255,.2);
@@ -512,11 +546,13 @@ PLANETAS INDIVIDUAIS
     background:radial-gradient(circle at 30% 30%,#c1b0a6,#6e5e54 65%,#1a1411);
 }
 
+
 /* ==========================================
 ANIMAÇÕES
 ========================================== */
 
 @keyframes girarPlaneta{
+
     from{
         transform:translate(-50%,-50%) rotate(0deg);
     }
@@ -524,6 +560,7 @@ ANIMAÇÕES
     to{
         transform:translate(-50%,-50%) rotate(360deg);
     }
+
 }
 
 @keyframes pulsarPlaneta{
@@ -576,6 +613,7 @@ ANIMAÇÕES
 
 }
 
+
 /* ==========================================
 ÓRBITAS COM VELOCIDADE REALISTA
 ========================================== */
@@ -625,12 +663,14 @@ ANIMAÇÕES
     animation:orbitaPlutao 420s linear infinite;
 }
 
+
 /* ==========================================
 ANIMAÇÕES DAS ÓRBITAS
 SEM O 360°
 ========================================== */
 
 @keyframes orbitaMercurio{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -638,9 +678,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaVenus{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -648,9 +690,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaTerra{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -658,9 +702,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaMarte{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -668,9 +714,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaJupiter{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -678,9 +726,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaSaturno{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -688,9 +738,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaUrano{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -698,9 +750,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaNetuno{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -708,9 +762,11 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
 
 @keyframes orbitaPlutao{
+
     from{
         transform:translate(-50%,-50%) rotate(0turn);
     }
@@ -718,7 +774,9 @@ SEM O 360°
     to{
         transform:translate(-50%,-50%) rotate(1turn);
     }
+
 }
+
 
 /* ==========================================
 REMOVE ROTAÇÃO DOS PLANETAS
@@ -730,4 +788,259 @@ REMOVE ROTAÇÃO DOS PLANETAS
 
 .planeta-ativo{
     animation:pulsarPlaneta 2s ease-in-out infinite;
+}
+
+
+/* ==========================================
+PAINEL DE INFORMAÇÕES
+========================================== */
+
+.painel-informacoes{
+
+    position:fixed;
+
+    top:0;
+    right:0;
+
+    width:32%;
+    min-width:350px;
+    height:100vh;
+
+    background:#fff;
+
+    color:#333;
+
+    z-index:1000;
+
+    overflow-y:auto;
+
+    transform:translateX(100%);
+
+    transition:transform .5s ease;
+
+    box-shadow:-10px 0 40px rgba(0,0,0,.4);
+}
+
+
+/* PAINEL ABERTO */
+
+.painel-informacoes.aberto{
+
+    transform:translateX(0);
+
+}
+
+
+/* BOTÃO BACK */
+
+.btn-fechar{
+
+    position:absolute;
+
+    top:30px;
+    left:30px;
+
+    border:none;
+
+    background:transparent;
+
+    color:#222;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-fechar:hover{
+
+    color:#ff7a1a;
+
+    transform:translateX(-5px);
+
+}
+
+
+/* CONTEÚDO */
+
+.conteudo-informacoes{
+
+    padding:90px 45px 60px 45px;
+
+}
+
+
+/* CATEGORIA */
+
+.categoria{
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+    color:#777;
+
+}
+
+
+/* NOME */
+
+.conteudo-informacoes h2{
+
+    margin-top:12px;
+
+    font-size:32px;
+
+    font-weight:400;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    color:#222;
+
+}
+
+
+/* LINHA PRINCIPAL */
+
+.linha{
+
+    width:25px;
+
+    height:2px;
+
+    background:#222;
+
+    margin:12px 0 25px 0;
+
+}
+
+
+/* DESCRIÇÃO */
+
+#infoDescricao{
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    color:#888;
+
+    margin-bottom:35px;
+
+}
+
+
+/* BLOCOS */
+
+.info-bloco{
+
+    margin-bottom:35px;
+
+}
+
+
+/* TÍTULOS */
+
+.info-bloco h3{
+
+    font-size:12px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+    color:#222;
+
+    text-transform:uppercase;
+
+}
+
+
+/* LINHA PEQUENA */
+
+.linha-pequena{
+
+    width:22px;
+
+    height:1px;
+
+    background:#222;
+
+    margin:8px 0 12px 0;
+
+}
+
+
+/* TEXTOS */
+
+.info-bloco p{
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    color:#999;
+
+}
+
+
+/* BARRA DE ROLAGEM */
+
+.painel-informacoes::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.painel-informacoes::-webkit-scrollbar-track{
+
+    background:#f5f5f5;
+
+}
+
+.painel-informacoes::-webkit-scrollbar-thumb{
+
+    background:#999;
+
+}
+
+.painel-informacoes::-webkit-scrollbar-thumb:hover{
+
+    background:#555;
+
+}
+
+
+/* ==========================================
+RESPONSIVO
+========================================== */
+
+@media (max-width:900px){
+
+    .painel-informacoes{
+
+        width:45%;
+
+        min-width:320px;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .painel-informacoes{
+
+        width:100%;
+
+        min-width:0;
+
+    }
+
 }
