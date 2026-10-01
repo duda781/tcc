@@ -1003,6 +1003,7 @@ planets.forEach((planet, index) => {
 
 
     // CLIQUE
+    // NÃO ABRE O PAINEL
 
     planet.addEventListener(
         "click",
@@ -1024,18 +1025,6 @@ planets.forEach((planet, index) => {
 
             }
 
-
-            const nome =
-                menus[index]
-                    .querySelector(
-                        ".planeta-nome"
-                    )
-                    .textContent
-                    .trim();
-
-
-            abrirPainel(nome);
-
         }
     );
 
@@ -1045,6 +1034,8 @@ planets.forEach((planet, index) => {
 // ==========================================
 // CLIQUE NO MENU
 // ==========================================
+// O MENU NÃO ABRE O PAINEL.
+// SOMENTE SELECIONA O PLANETA.
 
 menus.forEach((menu, index) => {
 
@@ -1053,9 +1044,12 @@ menus.forEach((menu, index) => {
         (event) => {
 
 
+            // Se clicou no botão LEIA MAIS,
+            // deixa o próprio botão cuidar da abertura.
+
             if (
-                event.target.classList.contains(
-                    "btn-leia-mais"
+                event.target.closest(
+                    ".btn-leia-mais"
                 )
             ) {
 
@@ -1083,19 +1077,6 @@ menus.forEach((menu, index) => {
 
             }
 
-
-            // Abre também ao clicar no nome/menu
-
-            const nome =
-                menu.querySelector(
-                    ".planeta-nome"
-                )
-                .textContent
-                .trim();
-
-
-            abrirPainel(nome);
-
         }
     );
 
@@ -1105,6 +1086,7 @@ menus.forEach((menu, index) => {
 // ==========================================
 // BOTÃO LEIA MAIS
 // ==========================================
+// ESTE É O ÚNICO LOCAL QUE ABRE O PAINEL.
 
 botoesLeiaMais.forEach((botao) => {
 
@@ -1118,6 +1100,11 @@ botoesLeiaMais.forEach((botao) => {
 
             const menu =
                 botao.closest(".menu");
+
+
+            if (!menu) {
+                return;
+            }
 
 
             const nome =
@@ -1155,6 +1142,9 @@ botoesLeiaMais.forEach((botao) => {
 
             }
 
+
+            // ABRE A ABA SOMENTE PELO
+            // BOTÃO "LEIA MAIS"
 
             abrirPainel(nome);
 
